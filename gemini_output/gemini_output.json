@@ -1,0 +1,281 @@
+{
+  "output": {
+    "title_block": {
+      "part_name": "BEARING HOUSING",
+      "drawing_number": "TR-2026-0312",
+      "revision": "C",
+      "scale": "1:1",
+      "projection_angle": "1st angle",
+      "sheet_size": "A3",
+      "material": "Al 7075-T6",
+      "finish": "Anodize",
+      "drawn_by": "M. Yilmaz",
+      "checked_by": "A. Demir",
+      "approved_by": "K. Aslan",
+      "date": "2026-09-11"
+    },
+    "revisions": [
+      {
+        "rev": "A",
+        "description": "First issue",
+        "date": "2026-01-19",
+        "by": "MY"
+      },
+      {
+        "rev": "B",
+        "description": "Bore changed Ø44 to Ø45 H7",
+        "date": "2026-05-08",
+        "by": "MY"
+      },
+      {
+        "rev": "C",
+        "description": "Runout tightened 0,05 to 0,03",
+        "date": "2026-09-11",
+        "by": "AD"
+      }
+    ],
+    "general_notes": {
+      "general_tolerance_standard": "ISO 2768 - mK",
+      "fillet_radii": "Unless otherwise specified all fillets R1",
+      "edge_treatment": "Deburr and break sharp edges 0,2...0,4 mm",
+      "surface_treatment_spec": "Anodize per MIL-A-8625 Type II, Class 1",
+      "scaling_note": "Do not scale drawing"
+    },
+    "surface_finish": {
+      "general_ra": "3,2 µm",
+      "specific_surfaces": [
+        {
+          "location": "Internal bore Ø45 H7",
+          "ra": "0,8 µm"
+        }
+      ]
+    },
+    "dimensions": [
+      {
+        "feature": "Flange Outer Diameter",
+        "nominal": 80.0,
+        "unit": "mm"
+      },
+      {
+        "feature": "Pitch Circle Diameter (PCD)",
+        "nominal": 72.0,
+        "unit": "mm"
+      },
+      {
+        "feature": "Flange Through Holes",
+        "count": 6,
+        "nominal_diameter": 6.6,
+        "unit": "mm"
+      },
+      {
+        "feature": "Keyway Width",
+        "nominal": 8.0,
+        "tolerance": {
+          "upper": 0.1,
+          "lower": 0.0
+        },
+        "unit": "mm"
+      },
+      {
+        "feature": "Bore Clearance Diameter",
+        "nominal": 34.0,
+        "unit": "mm"
+      },
+      {
+        "feature": "Small Bore Diameter",
+        "nominal": 30.0,
+        "fit_class": "H7",
+        "unit": "mm"
+      },
+      {
+        "feature": "Main Bore Diameter",
+        "nominal": 45.0,
+        "fit_class": "H7",
+        "unit": "mm"
+      },
+      {
+        "feature": "Recess Diameter",
+        "nominal": 52.0,
+        "unit": "mm"
+      },
+      {
+        "feature": "Outer Journal Diameter",
+        "nominal": 60.0,
+        "fit_class": "g6",
+        "unit": "mm"
+      },
+      {
+        "feature": "Overall Length",
+        "nominal": 70.0,
+        "tolerance": {
+          "upper": 0.2,
+          "lower": -0.2
+        },
+        "unit": "mm"
+      },
+      {
+        "feature": "Flange Thickness",
+        "nominal": 12.0,
+        "unit": "mm"
+      },
+      {
+        "feature": "Shoulder Length",
+        "nominal": 58.0,
+        "type": "reference",
+        "unit": "mm"
+      },
+      {
+        "feature": "Body Step Length",
+        "nominal": 1.6,
+        "unit": "mm"
+      },
+      {
+        "feature": "Flange Back Clearance Step Length",
+        "nominal": 6.0,
+        "unit": "mm"
+      },
+      {
+        "feature": "Journal Length",
+        "nominal": 50.0,
+        "unit": "mm"
+      },
+      {
+        "feature": "Transition Radius",
+        "nominal": 3.0,
+        "type": "radius",
+        "unit": "mm"
+      },
+      {
+        "feature": "Journal Outer Edge Chamfer",
+        "size": "2x45°"
+      },
+      {
+        "feature": "Bore Chamfer",
+        "size": "1x45°"
+      }
+    ],
+    "threads": [
+      {
+        "type": "M6",
+        "class": "6H",
+        "count": 2,
+        "depth": 12.0,
+        "angular_spacing": "60°",
+        "unit": "mm"
+      }
+    ],
+    "gdt_callouts": [
+      {
+        "characteristic": "Position",
+        "tolerance_value": 0.2,
+        "material_condition": "MMC",
+        "datums": [
+          "A",
+          "B",
+          "C"
+        ],
+        "applies_to": "6x Ø6.6 Holes"
+      },
+      {
+        "characteristic": "Symmetry",
+        "tolerance_value": 0.1,
+        "datums": [
+          "B"
+        ],
+        "applies_to": "Keyway 8 +0.1/0"
+      },
+      {
+        "characteristic": "Perpendicularity",
+        "tolerance_value": 0.05,
+        "datums": [
+          "A"
+        ],
+        "applies_to": "Outer Shaft Surface Ø60 g6"
+      },
+      {
+        "characteristic": "Flatness",
+        "tolerance_value": 0.02,
+        "applies_to": "Flange Rear Face"
+      },
+      {
+        "characteristic": "Parallelism",
+        "tolerance_value": 0.1,
+        "datums": [
+          "A"
+        ],
+        "applies_to": "Flange Front Face"
+      },
+      {
+        "characteristic": "Cylindricity",
+        "tolerance_value": 0.015,
+        "applies_to": "Bore Ø45 H7"
+      },
+      {
+        "characteristic": "Position",
+        "tolerance_value": 0.05,
+        "datums": [
+          "A",
+          "B"
+        ],
+        "applies_to": "Bore Ø45 H7"
+      },
+      {
+        "characteristic": "Circularity",
+        "tolerance_value": 0.02,
+        "applies_to": "Outer Shaft Surface Ø60 g6"
+      },
+      {
+        "characteristic": "Profile of a Surface",
+        "tolerance_value": 0.3,
+        "datums": [
+          "A",
+          "B"
+        ],
+        "applies_to": "End Face Profile"
+      }
+    ],
+    "datums": [
+      {
+        "datum": "A",
+        "feature": "Flange Front Face"
+      },
+      {
+        "datum": "B",
+        "feature": "Outer Shaft Diameter Ø60 g6"
+      },
+      {
+        "datum": "C",
+        "feature": "Keyway Centerline Axis"
+      }
+    ],
+    "detail_views": [
+      {
+        "name": "C",
+        "scale": "5:1",
+        "features": [
+          {
+            "description": "Slot Width",
+            "value": 3.2,
+            "unit": "mm"
+          },
+          {
+            "description": "Side Angle",
+            "value": 15.0,
+            "unit": "degrees"
+          },
+          {
+            "description": "Corner Radius",
+            "value": 0.2,
+            "unit": "mm"
+          },
+          {
+            "description": "Slot Depth",
+            "value": 1.0,
+            "unit": "mm"
+          }
+        ]
+      }
+    ]
+  },
+  "processing_time_seconds": 21.960169315338135
+}

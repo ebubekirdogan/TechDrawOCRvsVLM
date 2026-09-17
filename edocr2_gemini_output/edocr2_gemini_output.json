@@ -1,0 +1,275 @@
+{
+  "output": {
+    "title_block": {
+      "part_name": "BEARING HOUSING",
+      "drawing_number": "TR-2026-0312",
+      "revision": "C",
+      "scale": "1:1",
+      "sheet_size": "A3",
+      "projection": "1st angle",
+      "material": "Al 7075-T6",
+      "finish": "Anodize",
+      "drawn_by": "M. Yilmaz",
+      "drawn_date": "2026-09-11",
+      "checked_by": "A. Demir",
+      "approved_by": "K. Aslan"
+    },
+    "revisions": [
+      {
+        "rev": "A",
+        "description": "First issue",
+        "date": "2026-01-19",
+        "by": "MY"
+      },
+      {
+        "rev": "B",
+        "description": "Bore changed Ø44 to Ø45 H7",
+        "date": "2026-05-08",
+        "by": "MY"
+      },
+      {
+        "rev": "C",
+        "description": "Runout tightened 0,05 to 0,03",
+        "date": "2026-09-11",
+        "by": "AD"
+      }
+    ],
+    "general_notes": [
+      "General tolerance ISO 2768 - mK",
+      "Unless otherwise specified all fillets R1.",
+      "Deburr and break sharp edges 0,2...0,4 mm.",
+      "Anodize per MIL-A-8625 Type II, Class 1.",
+      "Do not scale drawing."
+    ],
+    "surface_roughness": {
+      "default_ra": "3,2 µm",
+      "flange_face": "1,6 µm",
+      "main_bore": "0,8 µm",
+      "groove": "3,2 µm"
+    },
+    "dimensions_and_tolerances": [
+      {
+        "balloon_id": 31,
+        "feature": "Flange outer diameter",
+        "value": "80",
+        "type": "diameter"
+      },
+      {
+        "balloon_id": 2,
+        "feature": "Pitch circle diameter",
+        "value": "72",
+        "type": "diameter"
+      },
+      {
+        "balloon_id": 3,
+        "feature": "Flange mounting holes",
+        "value": "6x Ø6.6",
+        "type": "diameter_pattern"
+      },
+      {
+        "balloon_id": 8,
+        "feature": "Keyway width",
+        "value": "8",
+        "tolerance": "+0.1 / 0",
+        "type": "linear"
+      },
+      {
+        "balloon_id": 9,
+        "feature": "Bore diameter at front keyway",
+        "value": "34",
+        "type": "diameter"
+      },
+      {
+        "balloon_id": 5,
+        "feature": "Internal cone angle",
+        "value": "60°",
+        "type": "angular"
+      },
+      {
+        "balloon_id": 26,
+        "feature": "Counterbore diameter",
+        "value": "52",
+        "type": "diameter"
+      },
+      {
+        "balloon_id": 20,
+        "feature": "Fit bore diameter 1",
+        "value": "45",
+        "tolerance": "H7",
+        "type": "diameter"
+      },
+      {
+        "balloon_id": 24,
+        "feature": "Fit bore diameter 2",
+        "value": "30",
+        "tolerance": "H7",
+        "type": "diameter"
+      },
+      {
+        "balloon_id": 16,
+        "feature": "Outer stem diameter",
+        "value": "60",
+        "tolerance": "g6",
+        "type": "diameter"
+      },
+      {
+        "balloon_id": 11,
+        "feature": "Overall length",
+        "value": "70",
+        "tolerance": "±0.2",
+        "type": "linear"
+      },
+      {
+        "balloon_id": 12,
+        "feature": "Flange thickness",
+        "value": "12",
+        "type": "linear"
+      },
+      {
+        "balloon_id": 13,
+        "feature": "Stem length",
+        "value": "58",
+        "type": "reference"
+      },
+      {
+        "balloon_id": 21,
+        "feature": "Bore shoulder length",
+        "value": "50",
+        "type": "linear"
+      },
+      {
+        "balloon_id": 27,
+        "feature": "Flange recess depth",
+        "value": "6",
+        "type": "linear"
+      },
+      {
+        "balloon_id": 30,
+        "feature": "Internal fillet radius",
+        "value": "R3",
+        "type": "radius"
+      },
+      {
+        "balloon_id": 28,
+        "feature": "Stem end chamfer",
+        "value": "2x45°",
+        "type": "chamfer"
+      },
+      {
+        "balloon_id": 29,
+        "feature": "Bore entry chamfer",
+        "value": "1x45°",
+        "type": "chamfer"
+      },
+      {
+        "balloon_id": 35,
+        "feature": "Detail C groove width",
+        "value": "3.2",
+        "type": "linear"
+      },
+      {
+        "balloon_id": 38,
+        "feature": "Detail C groove side angle",
+        "value": "15°",
+        "type": "angular"
+      },
+      {
+        "balloon_id": 37,
+        "feature": "Detail C groove corner radius",
+        "value": "R0.2",
+        "type": "radius"
+      }
+    ],
+    "gdt_callouts": [
+      {
+        "balloon_id": 4,
+        "characteristic": "position",
+        "tolerance": "Ø0.2",
+        "material_condition": "MMC",
+        "datums": [
+          "A",
+          "B",
+          "C"
+        ],
+        "applied_to": "6x Ø6.6 holes"
+      },
+      {
+        "balloon_id": 10,
+        "characteristic": "symmetry",
+        "tolerance": "0.1",
+        "datums": [
+          "B"
+        ],
+        "applied_to": "8 mm keyway"
+      },
+      {
+        "balloon_id": 18,
+        "characteristic": "flatness",
+        "tolerance": "0.02",
+        "datums": [],
+        "applied_to": "Flange mounting face"
+      },
+      {
+        "balloon_id": 33,
+        "characteristic": "parallelism",
+        "tolerance": "0.1",
+        "datums": [
+          "A"
+        ],
+        "applied_to": "Flange front face"
+      },
+      {
+        "balloon_id": 22,
+        "characteristic": "profile_of_a_line",
+        "tolerance": "0.015",
+        "datums": [],
+        "applied_to": "60° internal cone"
+      },
+      {
+        "balloon_id": 25,
+        "characteristic": "position",
+        "tolerance": "Ø0.05",
+        "datums": [
+          "A",
+          "B"
+        ],
+        "applied_to": "60° internal cone"
+      },
+      {
+        "balloon_id": 15,
+        "characteristic": "perpendicularity",
+        "tolerance": "0.05",
+        "datums": [
+          "A"
+        ],
+        "applied_to": "Rear end face"
+      },
+      {
+        "balloon_id": 32,
+        "characteristic": "circularity",
+        "tolerance": "0.02",
+        "datums": [],
+        "applied_to": "Ø60 g6 cylinder"
+      },
+      {
+        "balloon_id": 34,
+        "characteristic": "circular_runout",
+        "tolerance": "0.3",
+        "datums": [
+          "A",
+          "B"
+        ],
+        "applied_to": "Rear outer face/diameter"
+      }
+    ],
+    "threads": [
+      {
+        "balloon_id": 7,
+        "specification": "2x M6 - 6H",
+        "depth": "12 mm",
+        "type": "metric_internal"
+      }
+    ]
+  },
+  "processing_time_seconds": 29.279341459274292
+}
