@@ -2,6 +2,8 @@
 
 Comparing **OCR-only**, **VLM-only**, and **OCR+VLM** pipelines for extracting manufacturing information (dimensions, tolerances, GD&T, surface finish, materials) from mechanical engineering technical drawings.
 
+**[📊 View the full comparison report](https://ebubekirdogan.github.io/TechDrawOCRvsVLM/Project_Report.html)**
+
 ## Overview
 
 Technical drawings encode manufacturing information in a dense visual language: rotated dimension text, GD&T symbols packed into feature control frames, tolerance callouts, and datum references overlaid on geometric line work. Standard OCR struggles with this format because it was built for natural text, not engineering notation. This project compares three extraction strategies on the same test drawing to measure how much each approach actually recovers.
@@ -52,7 +54,9 @@ TechDrawOCRvsVLM/
 
 ## Full Report
 
-The detailed, balloon-by-balloon comparison (ground truth vs. each pipeline's output) lives in [`Project_Report.html`](./Project_Report.html).
+**[View the live report →](https://ebubekirdogan.github.io/TechDrawOCRvsVLM/Project_Report.html)**
+
+The detailed, balloon-by-balloon comparison (ground truth vs. each pipeline's output.) Source file: [`Project_Report.html`](./Project_Report.html).
 
 ## Setup
 
