@@ -3,96 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OCR/VLM Karşılaştırma — TR-2026-0312 BEARING HOUSING</title>
+<title>OCR/VLM Karşılaştırma — TR-2026-0312</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;background:#f1f5f9;color:#1e293b}
-a{color:#2563eb}
-
-/* HEADER */
-.ph{background:#1e293b;color:#f1f5f9;padding:14px 22px;display:flex;align-items:center;gap:14px}
+.ph{background:#1e293b;color:#f1f5f9;padding:14px 22px}
 .ph h1{font-size:17px;font-weight:700}
 .ph p{font-size:11px;color:#94a3b8;margin-top:3px}
-
-/* IMAGE */
 .ip{background:#fff;padding:14px;text-align:center;border-bottom:3px solid #cbd5e1}
-.ip img{max-width:100%;max-height:580px;object-fit:contain;border:1px solid #cbd5e1;border-radius:4px;cursor:zoom-in;transition:max-height .3s}
+.ip img{max-width:100%;max-height:580px;object-fit:contain;border:1px solid #cbd5e1;border-radius:4px;cursor:zoom-in}
 .ip img.zoomed{max-height:none;width:100%;cursor:zoom-out}
 .ip .lbl{font-size:11px;color:#64748b;margin-top:6px}
-
-/* SUMMARY */
 .sb{display:flex;gap:12px;padding:14px 18px;background:#e2e8f0;flex-wrap:wrap}
-.sc{background:#fff;border-radius:8px;padding:12px 16px;border:1px solid #cbd5e1;flex:1;min-width:190px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.sc h3{font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.sc{background:#fff;border-radius:8px;padding:12px 16px;border:1px solid #cbd5e1;flex:1;min-width:200px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.sc h3{font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
 .sc .pn{font-size:14px;font-weight:700;margin-bottom:6px}
-.sr{display:flex;gap:6px;flex-wrap:wrap}
+.axis-lbl{font-size:11px;font-weight:700;color:#475569;margin-top:8px;margin-bottom:3px}
+.sr{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
 .st{padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700}
-.st.ok {background:#dcfce7;color:#16a34a;border:1px solid #86efac}
-.st.wn {background:#fef3c7;color:#d97706;border:1px solid #fcd34d}
-.st.fl {background:#fee2e2;color:#dc2626;border:1px solid #fca5a5}
-.cg{margin-top:7px;font-size:11px;color:#475569;display:grid;grid-template-columns:1fr 1fr;gap:2px 10px;line-height:1.6}
-
-/* LEGEND */
+.st.ok{background:#dcfce7;color:#16a34a;border:1px solid #86efac}
+.st.wn{background:#fef3c7;color:#d97706;border:1px solid #fcd34d}
+.st.fl{background:#fee2e2;color:#dc2626;border:1px solid #fca5a5}
+.pct{font-size:14px;font-weight:800;margin-left:6px;color:#16a34a}
+.axis-info{background:#eff6ff;border-left:4px solid #3b82f6;padding:10px 16px;font-size:12px;line-height:1.7}
+.axis-info b{color:#1d4ed8}
 .lg{display:flex;gap:18px;padding:8px 18px;background:#fff;border-top:1px solid #e2e8f0;font-size:12px;flex-wrap:wrap;align-items:center}
 .li{display:flex;align-items:center;gap:5px}
 .s-ok{color:#16a34a;font-weight:700;font-size:15px}
 .s-warn{color:#d97706;font-weight:700;font-size:15px}
 .s-fail{color:#dc2626;font-weight:700;font-size:15px}
-
-/* SECTION TITLE */
 .st-bar{background:#1e293b;color:#fff;padding:9px 18px;font-size:12px;font-weight:700;letter-spacing:.3px}
-
-/* TABLE */
-.tp{overflow-x:auto;padding:0 0 20px}
-table{border-collapse:collapse;width:100%;min-width:900px}
+.tp{overflow-x:auto;padding:0 0 24px}
+table{border-collapse:collapse;width:100%;min-width:1000px}
 thead th{background:#1e293b;color:#f1f5f9;padding:9px 10px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;position:sticky;top:0;z-index:2;border-right:1px solid #334155;white-space:nowrap}
+th.col-e{background:#1e3a5f}
+th.col-g{background:#14532d}
+th.col-eg{background:#4a1942}
 tbody tr:nth-child(even){background:#f8fafc}
 tbody tr:nth-child(odd){background:#fff}
 tbody tr:hover{background:#e0f2fe}
-td{padding:7px 10px;border-bottom:1px solid #e2e8f0;border-right:1px solid #f1f5f9;vertical-align:top;line-height:1.45}
-.tc-bal{font-weight:700;font-size:15px;text-align:center;width:44px;color:#1e3a8a}
-.tc-gt code{font-family:'Courier New',monospace;font-size:12px;font-weight:600;white-space:nowrap}
-
-/* badges */
+td{padding:7px 10px;border-bottom:1px solid #e2e8f0;border-right:1px solid #f1f5f9;vertical-align:top;line-height:1.5}
+.tc-bal{font-weight:700;font-size:15px;text-align:center;width:42px;color:#1e3a8a}
+.tc-gt code{font-family:'Courier New',monospace;font-size:12px;font-weight:700;white-space:nowrap}
+.gt-desc{font-size:10px;color:#64748b;display:block;margin-top:2px;font-style:italic}
+.feat-row{margin-top:3px;padding-top:3px;border-top:1px dashed #e2e8f0}
 .badge{display:inline-block;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2px;white-space:nowrap}
-.bc-diameter{background:#dbeafe;color:#1d4ed8}
-.bc-bolt{background:#cffafe;color:#0e7490}
-.bc-length{background:#d1fae5;color:#065f46}
-.bc-gdt{background:#ede9fe;color:#6d28d9}
-.bc-thread{background:#fce7f3;color:#9d174d}
-.bc-surface{background:#ffedd5;color:#92400e}
-.bc-datum{background:#f0fdf4;color:#166534;border:1px solid #86efac}
-.bc-radius{background:#f0f9ff;color:#0369a1}
-.bc-chamfer{background:#fdf4ff;color:#7e22ce}
-.bc-angle{background:#fff7ed;color:#c2410c}
-
+.bc-d{background:#dbeafe;color:#1d4ed8}
+.bc-b{background:#cffafe;color:#0e7490}
+.bc-l{background:#d1fae5;color:#065f46}
+.bc-g{background:#ede9fe;color:#6d28d9}
+.bc-t{background:#fce7f3;color:#9d174d}
+.bc-sf{background:#ffedd5;color:#92400e}
+.bc-df{background:#f0fdf4;color:#166534;border:1px solid #86efac}
+.bc-r{background:#f0f9ff;color:#0369a1}
+.bc-c{background:#fdf4ff;color:#7e22ce}
+.bc-a{background:#fff7ed;color:#c2410c}
 .vbadge{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:700;font-family:monospace;white-space:nowrap}
-.vb-front{background:#e0e7ff;color:#3730a3}
-.vb-dd{background:#fef9c3;color:#854d0e}
+.vb-f{background:#e0e7ff;color:#3730a3}
+.vb-d{background:#fef9c3;color:#854d0e}
 .vb-c{background:#fce7f3;color:#9d174d}
-
-/* result cells */
 .c-ok{background:#f0fdf4;border-left:3px solid #16a34a}
 .c-warn{background:#fffbeb;border-left:3px solid #d97706}
 .c-fail{background:#fff1f2;border-left:3px solid #dc2626}
 .dv{font-size:11px;color:#374151}
-
-/* HALLUC */
-.hs{background:#fff;border-top:3px solid #f59e0b;padding:18px 22px}
-.hs h2{font-size:14px;font-weight:700;color:#92400e;margin-bottom:12px;display:flex;align-items:center;gap:7px}
-.hg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
-.hc{border:1px solid #fcd34d;background:#fffbeb;border-radius:6px;padding:10px 13px}
-.hc .hp{font-size:10px;font-weight:700;text-transform:uppercase;color:#92400e;margin-bottom:4px}
-.hc .hx{font-size:12px;color:#374151;line-height:1.5}
 </style>
 </head>
 <body>
 
 <div class="ph">
-  <div>
-    <h1>📐 OCR / VLM Pipeline Karşılaştırma Raporu</h1>
-    <p>TR-2026-0312 · BEARING HOUSING · Al 7075-T6 · Rev. C · A3 · 1st angle · 38 Karakteristik</p>
-  </div>
+  <h1>📐 OCR / VLM Pipeline Karşılaştırma Raporu</h1>
+  <p>TR-2026-0312 · BEARING HOUSING · Al 7075-T6 · Rev. C · A3 · 1st angle · 38 Karakteristik · 3 Eksenli Değerlendirme</p>
 </div>
 
 <div class="ip">
@@ -16025,428 +16005,473 @@ AAAAQCsBdAAAAAAAAAAAAAAAAAAAAJIIoAMAAAAAAAAAAAAAAAAAANBKAB0AAAAAAAAAAAAAAAAA
 AIAkAugAAAAAAAAAAAAAAAAAAAC0EkAHAAAAAAAAAAAAAAAAAAAgiQA6AAAAAAAAAAAAAAAAAAAA
 rQTQAQAAAAAAAAAAAAAAAAAASCKADgAAAAAAAAAAAAAAAAAAQCsBdAAAAAAAAAAAAAAAAAAAAJII
 oAMAAAAAAAAAAAAAAAAAANBKAB0AAAAAAAAAAAAAAAAAAIAkAugAAAAAAAAAAAAAAAAAAAC0qkjy
-s+4uAgAAAAAAAAAAAAAAAAAAgO73/wF5IntSbGVLZwAAAABJRU5ErkJggg==" alt="TR-2026-0312 Teknik Resim" onclick="this.classList.toggle('zoomed')">
-  <p class="lbl">↑ Teknik resme tıklayarak tam boyuta büyütebilirsiniz</p>
+s+4uAgAAAAAAAAAAAAAAAAAAgO73/wF5IntSbGVLZwAAAABJRU5ErkJggg==" alt="TR-2026-0312" onclick="this.classList.toggle('zoomed')">
+  <p class="lbl">↑ Tıklayarak tam boyuta büyütebilirsiniz</p>
+</div>
+
+<div class="axis-info">
+  <b>Değerlendirme Eksenleri:</b> &nbsp;
+  <b style="color:#1e3a5f">eDOCr2</b> → Yalnızca <b>metin/sembol okuma</b> kontrol edilir (semantik etiket üretmiyor). &nbsp;|&nbsp;
+  <b style="color:#14532d">Gemini</b> ve <b style="color:#4a1942">eDOCr2+Gemini</b> → Her biri için <b>(a) Değer/Metin doğruluğu</b> + <b>(b) Özellik/Anlam doğruluğu</b> ayrı ayrı değerlendirilir.
+  GD&T sembol ↔ kelime eşdeğerliği kabul edilir; yanlış karakteristik ise hata sayılır.
 </div>
 
 <div class="sb">
   <div class="sc">
-    <h3>Pipeline 1</h3>
-    <div class="pn">eDOCr2 — OCR Only</div>
+    <h3>Pipeline 1 — Tek Eksen</h3>
+    <div class="pn">eDOCr2 (OCR-only)</div>
+    <div class="axis-lbl">📝 Metin / Sembol Okuma</div>
     <div class="sr">
-      <span class="st ok">✓ 23 Doğru</span>
-      <span class="st wn">⚠ 11 Kısmi</span>
-      <span class="st fl">✗ 4 Hata</span>
-    </div>
-    <div class="cg">
-      <span>Çap: 5✓ 2⚠ / 7</span><span>GD&T: 6✓ 3⚠ / 9</span>
-      <span>Uzunluk: 3✓ 4⚠ 1✗ / 8</span><span>Datum: 0✓ 3✗ / 3</span>
-      <span>Diş: 1✓ / 1</span><span>Yüzey: 1✓ 1⚠ / 2</span>
-      <span>Pah: 2✓ / 2</span><span>Yarıçap: 2✓ / 2</span>
-      <span>Açı: 1✓ 1⚠ / 2</span><span>Bolt ⌀: 2✓ / 2</span>
+      <span class="st ok">✓ 23</span>
+      <span class="st wn">⚠ 10</span>
+      <span class="st fl">✗ 5</span>
+      <span class="pct">61%</span>
     </div>
   </div>
   <div class="sc">
-    <h3>Pipeline 2</h3>
-    <div class="pn">Gemini — VLM Only</div>
+    <h3>Pipeline 2 — İki Eksen</h3>
+    <div class="pn">Gemini (VLM-only)</div>
+    <div class="axis-lbl">🔢 Değer / Metin Doğruluğu</div>
     <div class="sr">
-      <span class="st ok">✓ 35 Doğru</span>
-      <span class="st wn">⚠ 3 Kısmi</span>
-      <span class="st fl">✗ 0 Hata</span>
+      <span class="st ok">✓ 37</span>
+      <span class="st wn">⚠ 0</span>
+      <span class="st fl">✗ 1</span>
+      <span class="pct">97%</span>
     </div>
-    <div class="cg">
-      <span>Çap: 6✓ 1⚠ / 7</span><span>GD&T: 8✓ 1⚠ / 9</span>
-      <span>Uzunluk: 8✓ / 8</span><span>Datum: 3✓ / 3</span>
-      <span>Diş: 1✓ / 1</span><span>Yüzey: 2✓ / 2</span>
-      <span>Pah: 2✓ / 2</span><span>Yarıçap: 2✓ / 2</span>
-      <span>Açı: 2✓ / 2</span><span>Bolt ⌀: 1✓ 1⚠ / 2</span>
+    <div class="axis-lbl">🏷️ Özellik / Anlam Doğruluğu</div>
+    <div class="sr">
+      <span class="st ok">✓ 36</span>
+      <span class="st wn">⚠ 1</span>
+      <span class="st fl">✗ 1</span>
+      <span class="pct">95%</span>
     </div>
   </div>
   <div class="sc">
-    <h3>Pipeline 3</h3>
-    <div class="pn">eDOCr2 + Gemini — Fusion</div>
+    <h3>Pipeline 3 — İki Eksen</h3>
+    <div class="pn">eDOCr2 + Gemini (Fusion)</div>
+    <div class="axis-lbl">🔢 Değer / Metin Doğruluğu</div>
     <div class="sr">
-      <span class="st ok">✓ 30 Doğru</span>
-      <span class="st wn">⚠ 4 Kısmi</span>
-      <span class="st fl">✗ 4 Hata</span>
+      <span class="st ok">✓ 33</span>
+      <span class="st wn">⚠ 0</span>
+      <span class="st fl">✗ 5</span>
+      <span class="pct">87%</span>
     </div>
-    <div class="cg">
-      <span>Çap: 6✓ 1⚠ / 7</span><span>GD&T: 7✓ 2⚠ / 9</span>
-      <span>Uzunluk: 7✓ 1✗ / 8</span><span>Datum: 0✓ 3✗ / 3</span>
-      <span>Diş: 1✓ / 1</span><span>Yüzey: 2✓ / 2</span>
-      <span>Pah: 2✓ / 2</span><span>Yarıçap: 2✓ / 2</span>
-      <span>Açı: 2✓ / 2</span><span>Bolt ⌀: 1✓ 1⚠ / 2</span>
+    <div class="axis-lbl">🏷️ Özellik / Anlam Doğruluğu</div>
+    <div class="sr">
+      <span class="st ok">✓ 29</span>
+      <span class="st wn">⚠ 1</span>
+      <span class="st fl">✗ 8</span>
+      <span class="pct">76%</span>
     </div>
   </div>
 </div>
 
 <div class="lg">
-  <b style="color:#374151">Semboller:</b>
-  <span class="li"><span class="s-ok">✓</span> Doğru / yeterince yakın</span>
-  <span class="li"><span class="s-warn">⚠</span> Kısmen doğru / şüpheli eşleşme</span>
-  <span class="li"><span class="s-fail">✗</span> Bulunamadı / yanlış</span>
+  <b>Semboller:</b>
+  <span class="li"><span class="s-ok">✓</span> Doğru</span>
+  <span class="li"><span class="s-warn">⚠</span> Kısmi / şüpheli</span>
+  <span class="li"><span class="s-fail">✗</span> Hata / bulunamadı</span>
+  <span style="color:#64748b;font-size:11px">| Gemini & Fusion hücrelerinde: üst satır = Değer, alt satır = Özellik/Anlam</span>
 </div>
 
-<div class="st-bar">📊 Karakteristik Bazında Karşılaştırma Tablosu — 38 Ballon</div>
+<div class="st-bar">📊 38 Karakteristik Karşılaştırma Tablosu</div>
 <div class="tp">
 <table>
 <thead>
 <tr>
   <th>Bal.</th>
-  <th>GT Metni</th>
+  <th>GT Metni / Özelliği</th>
   <th>Tip</th>
   <th>Görünüm</th>
-  <th>eDOCr2 (OCR-only)</th>
-  <th>Gemini (VLM-only)</th>
-  <th>eDOCr2 + Gemini (Fusion)</th>
+  <th class="col-e">eDOCr2 — Metin Okuma</th>
+  <th class="col-g">Gemini — Değer (a) + Özellik (b)</th>
+  <th class="col-eg">eDOCr2+Gemini — Değer (a) + Özellik (b)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tc-bal">1</td>
-<td class="tc-gt"><code>Ø90</code></td>
-<td><span class="badge bc-diameter">Çap (Ø)</span></td>
-<td><span class="vbadge vb-front">Front</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">⌀80 (Ø işareti var ama değer 80, GT=90)</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">Ø80 (değer 80, GT=90 — flange OD olarak etiketlendi)</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">Ø80 (değer 80, GT=90 — flange OD olarak etiketlendi)</span></td>
+<td class="tc-gt"><code>Ø90</code><br><span class="gt-desc">flange outer diameter</span></td>
+<td><span class="badge bc-d">Çap (Ø)</span></td>
+<td><span class="vbadge vb-f">Front</span></td>
+<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">⌀80 (değer 80, GT=90)</span></td>
+<td class="c-fail"><b>Değer:</b> <span class="s-fail">✗</span> <span class="dv">Ø80</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange outer diameter</span></div></td>
+<td class="c-fail"><b>Değer:</b> <span class="s-fail">✗</span> <span class="dv">Ø80</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange outer diameter</span></div></td>
 </tr><tr>
 <td class="tc-bal">2</td>
-<td class="tc-gt"><code>Ø72</code></td>
-<td><span class="badge bc-bolt">Bolt Circle</span></td>
-<td><span class="vbadge vb-front">Front</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀72 bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø72 — PCD olarak doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø72 — PCD doğru</span></td>
+<td class="tc-gt"><code>Ø72</code><br><span class="gt-desc">bolt circle of 6x Ø6,6</span></td>
+<td><span class="badge bc-b">Bolt ⌀</span></td>
+<td><span class="vbadge vb-f">Front</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀72</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø72</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">PCD (pitch circle diameter)</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø72</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">pitch circle diameter</span></div></td>
 </tr><tr>
 <td class="tc-bal">3</td>
-<td class="tc-gt"><code>6x Ø6,6</code></td>
-<td><span class="badge bc-diameter">Çap (Ø)</span></td>
-<td><span class="vbadge vb-front">Front</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">6x⌀6,6 bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">6x Ø6,6 flange through holes</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">6x Ø6.6 diameter pattern</span></td>
+<td class="tc-gt"><code>6x Ø6,6</code><br><span class="gt-desc">6x Ø6,6 through holes</span></td>
+<td><span class="badge bc-d">Çap (Ø)</span></td>
+<td><span class="vbadge vb-f">Front</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">6x⌀6,6</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">6x Ø6,6</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange through holes</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">6x Ø6.6</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">diameter pattern (6 adet)</span></div></td>
 </tr><tr>
 <td class="tc-bal">4</td>
-<td class="tc-gt"><code>⊕ Ø0,2 Ⓜ A B C</code></td>
-<td><span class="badge bc-gdt">GD&T</span></td>
-<td><span class="vbadge vb-front">Front</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">⌖|⌀02Ⓜ|A|B — datum C eksik; ⌀02 (nokta yok)</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Position Ø0.2 MMC A B C — tam doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Position Ø0.2 MMC A B C — tam doğru</span></td>
+<td class="tc-gt"><code>⊕ Ø0,2 Ⓜ A B C</code><br><span class="gt-desc">position Ø0.2 MMC — datums A B C — 6x Ø6,6 holes</span></td>
+<td><span class="badge bc-g">GD&T</span></td>
+<td><span class="vbadge vb-f">Front</span></td>
+<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">⌖|⌀02Ⓜ|A|B (datum C eksik; ⌀02 nokta yok)</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Position Ø0.2 MMC A B C</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">6x Ø6,6 holes — position tolerance</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Position Ø0.2 MMC A B C</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">6x Ø6,6 holes — position tolerance</span></div></td>
 </tr><tr>
 <td class="tc-bal">5</td>
-<td class="tc-gt"><code>60°</code></td>
-<td><span class="badge bc-angle">Açı</span></td>
-<td><span class="vbadge vb-front">Front</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">5 balonu ile 0,015 değeri karışmış; 60° ayrıca var</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">60° angular spacing (holes) — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">60° internal cone angle — doğru</span></td>
+<td class="tc-gt"><code>60°</code><br><span class="gt-desc">angular spacing of holes (basic)</span></td>
+<td><span class="badge bc-a">Açı</span></td>
+<td><span class="vbadge vb-f">Front</span></td>
+<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">60° ve balon '5' ile 0,015 değeri karışmış</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">60°</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">angular spacing of holes</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">60°</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-fail">✗</span> <span class="dv">internal cone angle olarak etiketlendi (GT: angular spacing)</span></div></td>
 </tr><tr>
 <td class="tc-bal">6</td>
-<td class="tc-gt"><code>C (datum)</code></td>
-<td><span class="badge bc-datum">Datum</span></td>
-<td><span class="vbadge vb-front">Front</span></td>
-<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">Datum C etiketi çıktıda yok</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Datum C — Ø6,6 hole axis</span></td>
-<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">Datum C çıktıda yok</span></td>
+<td class="tc-gt"><code>C</code><br><span class="gt-desc">datum C on one Ø6,6 hole</span></td>
+<td><span class="badge bc-df">Datum</span></td>
+<td><span class="vbadge vb-f">Front</span></td>
+<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">Bağımsız datum C yok — sadece GD&T ref içinde 'A|B|C'</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">C (bağımsız)</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">datum C — Ø6,6 hole axis</span></div></td>
+<td class="c-fail"><b>Değer:</b> <span class="s-fail">✗</span> <span class="dv">Bağımsız datum C yok</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-fail">✗</span> <span class="dv">—</span></div></td>
 </tr><tr>
 <td class="tc-bal">7</td>
-<td class="tc-gt"><code>2x M6-6H ▽12</code></td>
-<td><span class="badge bc-thread">Diş</span></td>
-<td><span class="vbadge vb-front">Front</span></td>
+<td class="tc-gt"><code>2x M6 - 6H ▽12</code><br><span class="gt-desc">M6 6H depth 12 mm qty 2</span></td>
+<td><span class="badge bc-t">Diş</span></td>
+<td><span class="vbadge vb-f">Front</span></td>
 <td class="c-ok"><span class="s-ok">✓</span> <span class="dv">2xM6-6H; 12 mm derinlik ayrıca var</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">M6 6H qty=2 depth=12 — tam doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">2x M6-6H depth=12 mm — doğru</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">M6 6H qty=2 depth=12</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">metric internal thread qty 2</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">2x M6-6H depth=12 mm</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">metric internal thread</span></div></td>
 </tr><tr>
 <td class="tc-bal">8</td>
-<td class="tc-gt"><code>8 +0,1/0</code></td>
-<td><span class="badge bc-length">Uzunluk</span></td>
-<td><span class="vbadge vb-front">Front</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">'8.0,1,/0' — tolerans formatı bozuk okunmuş</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">8 +0.1/0 keyway width — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">8 +0.1/0 keyway width — doğru</span></td>
+<td class="tc-gt"><code>8 +0,1/0</code><br><span class="gt-desc">keyway width</span></td>
+<td><span class="badge bc-l">Uzunluk</span></td>
+<td><span class="vbadge vb-f">Front</span></td>
+<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">8.0,1,/0 (nokta/virgül karışımı)</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">8 +0.1/0</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">keyway width</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">8 +0.1/0</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">keyway width</span></div></td>
 </tr><tr>
 <td class="tc-bal">9</td>
-<td class="tc-gt"><code>Ø34</code></td>
-<td><span class="badge bc-diameter">Çap (Ø)</span></td>
-<td><span class="vbadge vb-front">Front</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀34 bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø34 bore clearance — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø34 bore diameter — doğru</span></td>
+<td class="tc-gt"><code>Ø34</code><br><span class="gt-desc">keyway depth over opposite bore wall</span></td>
+<td><span class="badge bc-d">Çap (Ø)</span></td>
+<td><span class="vbadge vb-f">Front</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀34</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø34</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">bore clearance diameter</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø34</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">bore diameter at front keyway</span></div></td>
 </tr><tr>
 <td class="tc-bal">10</td>
-<td class="tc-gt"><code>≡ 0,1 B</code></td>
-<td><span class="badge bc-gdt">GD&T</span></td>
-<td><span class="vbadge vb-front">Front</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">'01|B' — sembol kayıp, tolerans '01' (virgül yok)</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Symmetry 0.1 datum B — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Symmetry 0.1 datum B — doğru</span></td>
+<td class="tc-gt"><code>≡ 0,1 B</code><br><span class="gt-desc">symmetry 0.1 datum B — keyway 8 +0.1/0</span></td>
+<td><span class="badge bc-g">GD&T</span></td>
+<td><span class="vbadge vb-f">Front</span></td>
+<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">01|B (≡ sembolü kayıp; '01' virgülsüz)</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Symmetry 0.1 B</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">keyway 8 — symmetry</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Symmetry 0.1 B</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">8 mm keyway — symmetry</span></div></td>
 </tr><tr>
 <td class="tc-bal">11</td>
-<td class="tc-gt"><code>70 ±0,2</code></td>
-<td><span class="badge bc-length">Uzunluk</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">70±0,2 bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">70 ±0.2 overall length — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">70 ±0.2 overall length — doğru</span></td>
+<td class="tc-gt"><code>70 ±0,2</code><br><span class="gt-desc">overall length</span></td>
+<td><span class="badge bc-l">Uzunluk</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">70±0,2</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">70 ±0.2</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">overall length</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">70 ±0.2</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">overall length</span></div></td>
 </tr><tr>
 <td class="tc-bal">12</td>
-<td class="tc-gt"><code>12</code></td>
-<td><span class="badge bc-length">Uzunluk</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">'12' var ama tek sayı — balon no. ile karışabilir</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">12 mm flange thickness — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">12 flange thickness — doğru</span></td>
+<td class="tc-gt"><code>12</code><br><span class="gt-desc">flange thickness</span></td>
+<td><span class="badge bc-l">Uzunluk</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">'12' var — balon no. 12 ile karışabilir</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">12</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange thickness</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">12</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange thickness</span></div></td>
 </tr><tr>
 <td class="tc-bal">13</td>
-<td class="tc-gt"><code>(58)</code></td>
-<td><span class="badge bc-length">Uzunluk</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">(58) referans bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">58 reference body length — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">(58) reference stem length — doğru</span></td>
+<td class="tc-gt"><code>(58)</code><br><span class="gt-desc">body length, reference only</span></td>
+<td><span class="badge bc-l">Uzunluk</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">(58)</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">58 (reference)</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">body length — reference</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">(58) reference</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">stem length — reference</span></div></td>
 </tr><tr>
 <td class="tc-bal">14</td>
-<td class="tc-gt"><code>Ø60 g6</code></td>
-<td><span class="badge bc-diameter">Çap (Ø)</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">'⌀6096' — g6 fit kodu '96' olarak bozuk okunmuş</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø60 g6 pilot diameter — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø60 g6 outer stem — doğru</span></td>
+<td class="tc-gt"><code>Ø60 g6</code><br><span class="gt-desc">pilot diameter Ø60 g6</span></td>
+<td><span class="badge bc-d">Çap (Ø)</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">⌀6096 (g6 → '96' karakter hatası)</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø60 g6</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">pilot diameter</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø60 g6</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">outer stem diameter</span></div></td>
 </tr><tr>
 <td class="tc-bal">15</td>
-<td class="tc-gt"><code>⊥ 0,05 A</code></td>
-<td><span class="badge bc-gdt">GD&T</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⏊|005|A — sembol ve tolerans doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Perpendicularity 0.05 A — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Perpendicularity 0.05 A — doğru</span></td>
+<td class="tc-gt"><code>⊥ 0,05 A</code><br><span class="gt-desc">perpendicularity 0.05 datum A — Ø60 g6</span></td>
+<td><span class="badge bc-g">GD&T</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⏊|005|A</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Perpendicularity 0.05 A</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">outer shaft Ø60 g6</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Perpendicularity 0.05 A</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">rear end face — datum A</span></div></td>
 </tr><tr>
 <td class="tc-bal">16</td>
-<td class="tc-gt"><code>B (datum)</code></td>
-<td><span class="badge bc-datum">Datum</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">Datum B etiketi çıktıda yok</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Datum B — Ø60 g6 pilot axis</span></td>
-<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">Datum B etiketi çıktıda yok</span></td>
+<td class="tc-gt"><code>B</code><br><span class="gt-desc">datum B on Ø60 g6</span></td>
+<td><span class="badge bc-df">Datum</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">Bağımsız datum B yok</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">B (bağımsız)</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">datum B — Ø60 g6 pilot axis</span></div></td>
+<td class="c-fail"><b>Değer:</b> <span class="s-fail">✗</span> <span class="dv">Bağımsız datum B yok</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-fail">✗</span> <span class="dv">—</span></div></td>
 </tr><tr>
 <td class="tc-bal">17</td>
-<td class="tc-gt"><code>A (datum)</code></td>
-<td><span class="badge bc-datum">Datum</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">Datum A etiketi çıktıda yok</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Datum A — flange front face</span></td>
-<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">Datum A etiketi çıktıda yok</span></td>
+<td class="tc-gt"><code>A</code><br><span class="gt-desc">datum A on flange front face</span></td>
+<td><span class="badge bc-df">Datum</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">Bağımsız datum A yok</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">A (bağımsız)</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">datum A — flange front face</span></div></td>
+<td class="c-fail"><b>Değer:</b> <span class="s-fail">✗</span> <span class="dv">Bağımsız datum A yok</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-fail">✗</span> <span class="dv">—</span></div></td>
 </tr><tr>
 <td class="tc-bal">18</td>
-<td class="tc-gt"><code>□ 0,02</code></td>
-<td><span class="badge bc-gdt">GD&T</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⏥|002 — flatness doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Flatness 0.02 flange rear face — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Flatness 0.02 flange mounting face — doğru</span></td>
+<td class="tc-gt"><code>□ 0,02</code><br><span class="gt-desc">flatness 0.02 — datum A face</span></td>
+<td><span class="badge bc-g">GD&T</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⏥|002</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Flatness 0.02</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange mounting face (datum A)</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Flatness 0.02</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange mounting face</span></div></td>
 </tr><tr>
 <td class="tc-bal">19</td>
-<td class="tc-gt"><code>1,6 (Ra)</code></td>
-<td><span class="badge bc-surface">Yüzey Ra</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">'±,6' — değer kısmen ('1' kayıp), Ra sembolü yok</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ra 1.6 µm flange front face — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ra 1.6 µm flange face — doğru</span></td>
+<td class="tc-gt"><code>1,6</code><br><span class="gt-desc">Ra 1.6 µm — flange front face</span></td>
+<td><span class="badge bc-sf">Yüzey Ra</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">±,6 ('1' kayıp; Ra sembolü yok)</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ra 1.6 µm</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange front face</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ra 1.6 µm flange face</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange face</span></div></td>
 </tr><tr>
 <td class="tc-bal">20</td>
-<td class="tc-gt"><code>Ø45 H7</code></td>
-<td><span class="badge bc-diameter">Çap (Ø)</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀45H7 bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø45 H7 main bore — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø45 H7 fit bore — doğru</span></td>
+<td class="tc-gt"><code>Ø45 H7</code><br><span class="gt-desc">main bore</span></td>
+<td><span class="badge bc-d">Çap (Ø)</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀45H7</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø45 H7</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">main bore</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø45 H7</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">fit bore diameter 1</span></div></td>
 </tr><tr>
 <td class="tc-bal">21</td>
-<td class="tc-gt"><code>50</code></td>
-<td><span class="badge bc-length">Uzunluk</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">'50' var ama tek sayı — balon no. riski</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">50 mm bore depth — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">50 bore shoulder length — doğru</span></td>
+<td class="tc-gt"><code>50</code><br><span class="gt-desc">Ø45 bore depth</span></td>
+<td><span class="badge bc-l">Uzunluk</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">'50' var — tek sayı, balon riski</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">50</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">bore depth / journal length</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">50</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">bore shoulder length</span></div></td>
 </tr><tr>
 <td class="tc-bal">22</td>
-<td class="tc-gt"><code>⌭ 0,015</code></td>
-<td><span class="badge bc-gdt">GD&T</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">0,015 değeri var ama cylindricity sembolü tanınmamış</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Cylindricity 0.015 Ø45 H7 — doğru</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">Profile of line 0.015 — GT: cylindricity; GD&T tipi yanlış</span></td>
+<td class="tc-gt"><code>⌭ 0,015</code><br><span class="gt-desc">cylindricity 0.015 — Ø45 H7 bore</span></td>
+<td><span class="badge bc-g">GD&T</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">0,015 var ama ⌭ sembolü '60° ⌭' ile karışmış</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Cylindricity 0.015</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">Ø45 H7 bore — cylindricity</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Profile of line 0.015</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-fail">✗</span> <span class="dv">60° cone — yanlış GD&T tipi (GT: cylindricity)</span></div></td>
 </tr><tr>
 <td class="tc-bal">23</td>
-<td class="tc-gt"><code>0,8 (Ra)</code></td>
-<td><span class="badge bc-surface">Yüzey Ra</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">0,8 Ra bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ra 0.8 µm Ø45 H7 bore — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ra 0.8 µm main bore — doğru</span></td>
+<td class="tc-gt"><code>0,8</code><br><span class="gt-desc">Ra 0.8 µm — Ø45 H7 bore</span></td>
+<td><span class="badge bc-sf">Yüzey Ra</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">0,8</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ra 0.8 µm</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">Ø45 H7 bore</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ra 0.8 µm</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">main bore (Ø45 H7)</span></div></td>
 </tr><tr>
 <td class="tc-bal">24</td>
-<td class="tc-gt"><code>Ø30 H7</code></td>
-<td><span class="badge bc-diameter">Çap (Ø)</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀30H7 bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø30 H7 small bore — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø30 H7 fit bore — doğru</span></td>
+<td class="tc-gt"><code>Ø30 H7</code><br><span class="gt-desc">through bore</span></td>
+<td><span class="badge bc-d">Çap (Ø)</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀30H7</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø30 H7</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">through bore</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø30 H7</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">fit bore diameter 2</span></div></td>
 </tr><tr>
 <td class="tc-bal">25</td>
-<td class="tc-gt"><code>⊕ Ø0,05 A B</code></td>
-<td><span class="badge bc-gdt">GD&T</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌖|⌀005|A|B — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Position Ø0.05 A B — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Position Ø0.05 A B — doğru</span></td>
+<td class="tc-gt"><code>⊕ Ø0,05 A B</code><br><span class="gt-desc">position Ø0.05 datums A B — Ø30 H7</span></td>
+<td><span class="badge bc-g">GD&T</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌖|⌀005|A|B</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Position Ø0.05 A B</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-warn">⚠</span> <span class="dv">Ø45 H7 bore (GT: Ø30 H7)</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Position Ø0.05 A B</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-warn">⚠</span> <span class="dv">60° internal cone (GT: Ø30 H7)</span></div></td>
 </tr><tr>
 <td class="tc-bal">26</td>
-<td class="tc-gt"><code>Ø52</code></td>
-<td><span class="badge bc-diameter">Çap (Ø)</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀52 bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø52 recess/counterbore — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Ø52 counterbore — doğru</span></td>
+<td class="tc-gt"><code>Ø52</code><br><span class="gt-desc">counterbore diameter</span></td>
+<td><span class="badge bc-d">Çap (Ø)</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀52</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø52</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">recess / counterbore diameter</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø52</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">counterbore diameter</span></div></td>
 </tr><tr>
 <td class="tc-bal">27</td>
-<td class="tc-gt"><code>6</code></td>
-<td><span class="badge bc-length">Uzunluk</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">'6' var ama balon no. 6 ile karışabilir; bağlam yok</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">6 mm flange recess depth — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">6 flange recess depth — doğru</span></td>
+<td class="tc-gt"><code>6</code><br><span class="gt-desc">counterbore depth</span></td>
+<td><span class="badge bc-l">Uzunluk</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">'6' var — balon no. 6 ile karışabilir</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">6</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange back clearance / recess depth</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">6</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange recess depth</span></div></td>
 </tr><tr>
 <td class="tc-bal">28</td>
-<td class="tc-gt"><code>2x45°</code></td>
-<td><span class="badge bc-chamfer">Pah</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">2x45° bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">2x45° chamfer — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">2x45° stem chamfer — doğru</span></td>
+<td class="tc-gt"><code>2x45°</code><br><span class="gt-desc">stem end chamfer 2x45°</span></td>
+<td><span class="badge bc-c">Pah</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">2x45°</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">2x45°</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">journal outer edge chamfer</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">2x45°</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">stem end chamfer</span></div></td>
 </tr><tr>
 <td class="tc-bal">29</td>
-<td class="tc-gt"><code>1x45°</code></td>
-<td><span class="badge bc-chamfer">Pah</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">1x45° bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">1x45° bore chamfer — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">1x45° bore entry chamfer — doğru</span></td>
+<td class="tc-gt"><code>1x45°</code><br><span class="gt-desc">bore entry chamfer 1x45°</span></td>
+<td><span class="badge bc-c">Pah</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">1x45°</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">1x45°</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">bore chamfer</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">1x45°</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">bore entry chamfer</span></div></td>
 </tr><tr>
 <td class="tc-bal">30</td>
-<td class="tc-gt"><code>R3</code></td>
-<td><span class="badge bc-radius">Yarıçap</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">R3 bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">R3 fillet radius — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">R3 internal fillet — doğru</span></td>
+<td class="tc-gt"><code>R3</code><br><span class="gt-desc">flange to body fillet R3</span></td>
+<td><span class="badge bc-r">Yarıçap</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">R3</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">R3</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">transition / fillet radius</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">R3</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">internal fillet radius</span></div></td>
 </tr><tr>
 <td class="tc-bal">31</td>
-<td class="tc-gt"><code>Ø80</code></td>
-<td><span class="badge bc-bolt">Bolt Circle</span></td>
-<td><span class="vbadge vb-front">Front</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀80 bulundu</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">Ø80 flange OD olarak etiketlendi (GT: 2xM6 bolt circle PCD)</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">Ø80 flange OD (GT: M6 bolt circle — semantik hata)</span></td>
+<td class="tc-gt"><code>Ø80</code><br><span class="gt-desc">bolt circle of 2x M6 (basic)</span></td>
+<td><span class="badge bc-b">Bolt ⌀</span></td>
+<td><span class="vbadge vb-f">Front</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌀80</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø80</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-fail">✗</span> <span class="dv">flange outer diameter (GT: 2x M6 bolt circle PCD)</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Ø80</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-fail">✗</span> <span class="dv">flange outer diameter (GT: 2x M6 bolt circle PCD)</span></div></td>
 </tr><tr>
 <td class="tc-bal">32</td>
-<td class="tc-gt"><code>○ 0,02</code></td>
-<td><span class="badge bc-gdt">GD&T</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">○|002 circularity — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Circularity 0.02 Ø60 g6 — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Circularity 0.02 Ø60 g6 — doğru</span></td>
+<td class="tc-gt"><code>○ 0,02</code><br><span class="gt-desc">circularity 0.02 — Ø60 g6</span></td>
+<td><span class="badge bc-g">GD&T</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">○|002</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Circularity 0.02</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">Ø60 g6 cylinder</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Circularity 0.02</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">Ø60 g6 cylinder</span></div></td>
 </tr><tr>
 <td class="tc-bal">33</td>
-<td class="tc-gt"><code>∥ 0,1 A</code></td>
-<td><span class="badge bc-gdt">GD&T</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌰|01|A parallelism — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Parallelism 0.1 A flange face — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">Parallelism 0.1 A flange front face — doğru</span></td>
+<td class="tc-gt"><code>∥ 0,1 A</code><br><span class="gt-desc">parallelism 0.1 datum A — flange back face</span></td>
+<td><span class="badge bc-g">GD&T</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌰|01|A</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Parallelism 0.1 A</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange front face</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Parallelism 0.1 A</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">flange front face</span></div></td>
 </tr><tr>
 <td class="tc-bal">34</td>
-<td class="tc-gt"><code>⌣ 0,3 A B</code></td>
-<td><span class="badge bc-gdt">GD&T</span></td>
-<td><span class="vbadge vb-dd">D–D</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌓|03|A|B bulundu (surface profile)</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">Profile of Surface 0.3 A B (GT sembolü ile eşleşiyor)</span></td>
-<td class="c-warn"><span class="s-warn">⚠</span> <span class="dv">Circular Runout 0.3 A B — GT: surface_profile; yanlış GD&T tipi</span></td>
+<td class="tc-gt"><code>⌣ 0,3 A B</code><br><span class="gt-desc">surface_profile 0.3 datums A B</span></td>
+<td><span class="badge bc-g">GD&T</span></td>
+<td><span class="vbadge vb-d">D–D</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">⌓|03|A|B</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Profile of a Surface 0.3 A B</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">end face profile</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">Circular Runout 0.3 A B</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-fail">✗</span> <span class="dv">rear outer face (yanlış GD&T tipi)</span></div></td>
 </tr><tr>
 <td class="tc-bal">35</td>
-<td class="tc-gt"><code>3,2</code></td>
-<td><span class="badge bc-length">Uzunluk</span></td>
+<td class="tc-gt"><code>3,2</code><br><span class="gt-desc">undercut width</span></td>
+<td><span class="badge bc-l">Uzunluk</span></td>
 <td><span class="vbadge vb-c">C(5:1)</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">3,2 groove width (Detail C) — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">3.2 mm slot width Detail C — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">3.2 groove width Detail C — doğru</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">3,2</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">3.2</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">slot / undercut width (Detail C)</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">3.2</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">Detail C groove width</span></div></td>
 </tr><tr>
 <td class="tc-bal">36</td>
-<td class="tc-gt"><code>0,5</code></td>
-<td><span class="badge bc-length">Uzunluk</span></td>
+<td class="tc-gt"><code>0,5</code><br><span class="gt-desc">undercut depth</span></td>
+<td><span class="badge bc-l">Uzunluk</span></td>
 <td><span class="vbadge vb-c">C(5:1)</span></td>
-<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">0,5 undercut depth çıktıda bulunamadı</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">0.5 mm slot depth Detail C — doğru</span></td>
-<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">0,5 undercut depth çıktıda yok</span></td>
+<td class="c-fail"><span class="s-fail">✗</span> <span class="dv">0,5 bulunamadı</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">0.5</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">slot / undercut depth (Detail C)</span></div></td>
+<td class="c-fail"><b>Değer:</b> <span class="s-fail">✗</span> <span class="dv">0,5 bulunamadı</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-fail">✗</span> <span class="dv">—</span></div></td>
 </tr><tr>
 <td class="tc-bal">37</td>
-<td class="tc-gt"><code>R0,2</code></td>
-<td><span class="badge bc-radius">Yarıçap</span></td>
+<td class="tc-gt"><code>R0,2</code><br><span class="gt-desc">corner radius R0,2 (Detail C)</span></td>
+<td><span class="badge bc-r">Yarıçap</span></td>
 <td><span class="vbadge vb-c">C(5:1)</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">R0,2 bulundu</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">R0.2 corner radius Detail C — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">R0.2 groove corner radius — doğru</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">R0,2</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">R0.2</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">corner radius Detail C</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">R0.2</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">groove corner radius</span></div></td>
 </tr><tr>
 <td class="tc-bal">38</td>
-<td class="tc-gt"><code>15°</code></td>
-<td><span class="badge bc-angle">Açı</span></td>
+<td class="tc-gt"><code>15°</code><br><span class="gt-desc">undercut relief angle 15°</span></td>
+<td><span class="badge bc-a">Açı</span></td>
 <td><span class="vbadge vb-c">C(5:1)</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">15° groove side angle — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">15° relief angle Detail C — doğru</span></td>
-<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">15° groove side angle — doğru</span></td>
+<td class="c-ok"><span class="s-ok">✓</span> <span class="dv">15°</span></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">15°</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">undercut relief angle</span></div></td>
+<td class="c-ok"><b>Değer:</b> <span class="s-ok">✓</span> <span class="dv">15°</span><br>
+<div class="feat-row"><b>Özellik:</b> <span class="s-ok">✓</span> <span class="dv">groove side angle</span></div></td>
 </tr>
 </tbody>
 </table>
-</div>
-
-<div class="hs">
-<h2>⚠️ Hallucination / Ground Truth'ta Olmayan / Hatalı Bilgiler</h2>
-<div class="hg">
-  <div class="hc">
-    <div class="hp">eDOCr2 — OCR Only</div>
-    <div class="hx"><b>Balon numaraları boyut listesine karışmış:</b> "1", "2", "3", "10", "11", "17", "20", "23", "24", "26", "27", "30" gibi çıplak tek/iki haneli sayılar dimensions dizisine girmiş — bunlar mavi balon etiketleri, gerçek ölçü değil.</div>
-  </div>
-  <div class="hc">
-    <div class="hp">eDOCr2 — OCR Only</div>
-    <div class="hx"><b>"D—D" kesit etiketi dimensions'a girmiş:</b> other_info'da "D—D" görünüm etiketi ölçü olarak sınıflandırılmış. Gerçek bir boyut değil.</div>
-  </div>
-  <div class="hc">
-    <div class="hp">eDOCr2 — OCR Only</div>
-    <div class="hx"><b>Balon 22 — cylindricity sembolü kayıp:</b> "60○ ⌭" şeklinde okunmuş; 60° delik açısı ve cylindricity GD&T'si birbirine karışmış. 0,015 değeri mevcut ama sembol ve tip tanımlaması başarısız.</div>
-  </div>
-  <div class="hc">
-    <div class="hp">Gemini — VLM Only</div>
-    <div class="hx"><b>Balon 31 — semantik sınıflandırma hatası:</b> Ø80 değerini "flange outer diameter (OD)" olarak etiketledi. GT: 2x M6 cıvataların bolt circle PCD değeri. Sayısal değer doğru, semantik kategori yanlış.</div>
-  </div>
-  <div class="hc">
-    <div class="hp">Gemini — VLM Only</div>
-    <div class="hx"><b>Balon 34 — GD&T karakteristik adı belirsiz:</b> "Profile of a Surface" yazdı. GT "surface_profile". Aynı karakteristik ama eDOCr2+Gemini bunu "circular_runout" yaptı — pipeline'lar arası tutarsızlık.</div>
-  </div>
-  <div class="hc">
-    <div class="hp">eDOCr2 + Gemini — Fusion</div>
-    <div class="hx"><b>Datum A, B, C tamamen eksik:</b> Fusion pipeline datum_feature tipinde hiçbir çıktı üretmedi. Sadece GD&T referansları içinde datum harfleri geçiyor, bağımsız datum tanımları yok.</div>
-  </div>
-  <div class="hc">
-    <div class="hp">eDOCr2 + Gemini — Fusion</div>
-    <div class="hx"><b>Balon 22 — "profile_of_a_line" yanlışı:</b> GT cylindricity (⌭), Gemini tek başına doğru buldu. Ama Fusion birleşimi bunu "profile of a line" yaptı — OCR'ın bozuk sembolü Gemini'nin doğru sonucunu bozmuş olabilir.</div>
-  </div>
-  <div class="hc">
-    <div class="hp">Tüm Pipeline'lar</div>
-    <div class="hx"><b>Balon 1 — Ø90 vs Ø80:</b> Ground truth flange outer diameter için Ø90 mm diyor, ama resimde "Ø80" yazıyor ve tüm pipeline'lar Ø80 okudu. GT'nin buradaki değerinin doğruluğu bağımsız doğrulanmalı.</div>
-  </div>
-</div>
 </div>
 
 </body>
