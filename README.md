@@ -2,7 +2,7 @@
 
 Comparing **OCR-only**, **VLM-only**, and **OCR+VLM** pipelines for extracting manufacturing information (dimensions, tolerances, GD&T, surface finish, materials) from mechanical engineering technical drawings.
 
-**[📊 View the full comparison report](https://ebubekirdogan.github.io/TechDrawOCRvsVLM/Project_Report.html)**
+**[📊 View the full comparison report](https://ebubekirdogan.github.io/TechDrawOCRvsVLM/Project_Report.html?v=2)**
 
 ## Overview
 
@@ -54,9 +54,9 @@ TechDrawOCRvsVLM/
 
 ## Full Report
 
-**[View the live report →](https://ebubekirdogan.github.io/TechDrawOCRvsVLM/Project_Report.html)**
+**[View the live report →](https://ebubekirdogan.github.io/TechDrawOCRvsVLM/Project_Report.html?v=2)**
 
-The detailed, balloon-by-balloon comparison (ground truth vs. each pipeline's output.) Source file: [`Project_Report.html`](./Project_Report.html).
+The detailed, balloon-by-balloon comparison (ground truth vs. each pipeline's output, side by side with the drawing). Source file: [`Project_Report.html`](./Project_Report.html?v=2).
 
 ## Setup
 
